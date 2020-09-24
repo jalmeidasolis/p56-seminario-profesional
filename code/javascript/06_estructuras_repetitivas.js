@@ -11,10 +11,10 @@ const DECREMENTAR_PESO = 2
 
 //FUNCION NO VA A CAMBIAR
 const aumentarPeso = ( objeto ) => objeto.peso += INCREMENTAR_PESO
-const disminuyePeso = ( objeto ) => objeto.peso += DECREMENTAR_PESO
+const disminuyePeso = ( objeto ) => objeto.peso -= DECREMENTAR_PESO
 
-const comemucho = () => Math.random() < 0.1
-const realizaDeporte = () => Math.random() < 0.8
+const comemucho = () => Math.random() < 0.5
+const realizaDeporte = () => Math.random() < 0.7
 
 
 //VARIABLE/CONSTANTE QUE NO VA A CAMBIAR

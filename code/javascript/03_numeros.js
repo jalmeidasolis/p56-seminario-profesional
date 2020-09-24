@@ -1,3 +1,5 @@
+//NUMEROS
+
 var edad = 35
 console.log(edad)
 edad += 1
