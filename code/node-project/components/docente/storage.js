@@ -7,7 +7,7 @@ function addDocente( objeto ) {
     docente.save()
 }
 
-async function getDocente( filtroDocente ) {
+async function getDocentes( filtroDocente ) {
     let filtro = {}
     if(filtroDocente != null) {
         filtro ={ nombre : filtroDocente }

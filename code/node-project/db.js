@@ -8,8 +8,8 @@ async function connect(uri) {
         useUnifiedTopology: true,
         dbName: 'utups',
     })
-        .then((data) => { console.log( '[db] - Conectada con éxito.' ) })
-        .catch((error) => { console.error( '[error log] - ' + error ) })
+        .then((data) => { console.log('[db] - Conectada con éxito.') })
+        .catch((error) => {  console.error( '[error log] - ' + error ) })    
 }
 
 module.exports = connect
