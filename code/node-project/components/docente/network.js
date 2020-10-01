@@ -4,15 +4,34 @@ const response = require('../../network/response')
 const router = express.Router()
 
 router.get('/', function(req, res) {
-    response.success(req, res, 'Lista de Docentes de la UPS.', 200)
+    const filtroDocente = req.query.docente || null
+    controller.getDocentes(filtroDocente)
+        .then( (data)  => {
+            response.success(req, res, data, 200)
+        })
+        .catch((error) => {
+            response.error( req, res, error, 500)
+        })
 })
 
 router.post('/', function(req, res) {
-    if (req.query.error == 'ok') {
-        response.error( req, res, 'Error al ingresar el Docente.', 500 )        
-    } else {
-        response.success( req, res, 'Ingreso de Docente exitoso.', 201 )        
-    }
+    controller.addDocente( req.body.nombre, req.body.apellido, req.body.correo_electronico )
+        .then( (data) =>{
+            response.success( req, res, data, 201 )        
+        } )
+        .catch((error) => {
+            response.error( req, res, error, 500 )        
+        })
 })
+
+router.patch('/', function(req, res) {
+
+})
+
+router.delete('/', function(req, res) {
+
+})
+
+
 
 module.exports = router
