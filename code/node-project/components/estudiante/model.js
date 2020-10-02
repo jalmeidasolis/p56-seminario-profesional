@@ -13,8 +13,8 @@ const mySchema = new schema({
     apellido: {
         type: String,
         required: true,
-    },    
+    },
 })
 
-const model = mongoose.model( 'Estudiante', mySchema)
+const model = mongoose.model( 'Estudiante', mySchema )
 module.exports = model
